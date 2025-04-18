@@ -133,18 +133,14 @@ describe("listAvailablePatientAssessmentSlots", () => {
       }),
     ];
 
-    console.log(clinicians.map((c) => c.availableSlots));
-
     const result = listAvailableAssessmentsForPatient(
       createPatient(),
       clinicians
     );
 
-    console.log('result: ', result)
-
-    expect(result.length).toBe(2); // the first slot will also match with the second slot in the range from the first clinician, as they are not busy that day
+    expect(result.length).toBe(1);
     expect(result[0][0].id).toBe("allowed");
-    expect(result[1][0].id).toBe("allowed");
+    expect(result[0][1].id).toBe("allowed");
   });
 
   it("respects max weekly appointments", () => {

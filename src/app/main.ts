@@ -17,7 +17,7 @@ export const listAvailableAssessmentsForPatient = (
   patient: App.Patient,
   clinicians: App.Clinician[]
 ): [App.AvailableSlot, App.AvailableSlot][] => {
-  let availableSlots: App.AvailableSlot[] = [];
+  const result: [App.AvailableSlot, App.AvailableSlot][] = [];
 
   clinicians.forEach((clinician) => {
     // make sure clinician is a psychologist and accepts the correct insurance in the correct state
@@ -60,18 +60,12 @@ export const listAvailableAssessmentsForPatient = (
       );
     });
 
-    availableSlots = [
-      ...availableSlots,
-      ...filterOutOverlappingAppointments(eligibleSlots, 90),
-    ];
-  });
+    const nonClusteredSlots = filterOutOverlappingSlots(eligibleSlots, 90); // will also automatically sort from earliest to latest
 
-  const result: [App.AvailableSlot, App.AvailableSlot][] = [];
-
-  availableSlots
-    .sort((a, b) => a.date.getTime() - b.date.getTime())
-    .forEach((slot, idx) => {
-      availableSlots.slice(idx + 1).forEach((s2) => {
+    // for each valid and un-clustered slot, we want to put it in a tuple with any valid follow-up slot and add the pair to our result
+    // doing this here means that available slots will only be paired with available slots from the same clinician for the follow-up
+    nonClusteredSlots.forEach((slot, idx) => {
+      nonClusteredSlots.slice(idx + 1).forEach((s2) => {
         if (
           !isSameDay(s2.date, slot.date) &&
           differenceInDays(s2.date, slot.date)
@@ -80,12 +74,14 @@ export const listAvailableAssessmentsForPatient = (
         }
       });
     });
+  });
 
+  // by default the results should be sorted by clinician, because that's how we're processing them
   return result;
 };
 
-const filterOutOverlappingAppointments = (
-  slots: App.AvailableSlot[], // must be sorted
+const filterOutOverlappingSlots = (
+  slots: App.AvailableSlot[],
   durationMinutes: number
 ): App.AvailableSlot[] => {
   if (slots.length === 0) {
