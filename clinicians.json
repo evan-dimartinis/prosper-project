@@ -1,0 +1,275 @@
+[
+  {
+    "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+    "firstName": "Sarah",
+    "lastName": "Johnson",
+    "states": ["CA", "OR", "WA"],
+    "insurances": ["AETNA", "BCBS", "CIGNA"],
+    "clinicianType": "THERAPIST",
+    "appointments": [
+      {
+        "id": "a1b2c3d4-e5f6-4a5b-9c8d-ef1a2b3c4d5e",
+        "patientId": "12345678-abcd-4321-efgh-87654321abcd",
+        "clinicianId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "scheduledFor": "2025-04-18T10:30:00.000Z",
+        "appointmentType": "THERAPY_INTAKE",
+        "status": "UPCOMING",
+        "createdAt": "2025-04-01T14:22:10.000Z",
+        "updatedAt": "2025-04-01T14:22:10.000Z"
+      },
+      {
+        "id": "b2c3d4e5-f6a7-5b6c-0d1e-2f3a4b5c6d7e",
+        "patientId": "87654321-dcba-1234-hgfe-12345678dcba",
+        "clinicianId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "scheduledFor": "2025-04-19T15:00:00.000Z",
+        "appointmentType": "THERAPY_SIXTY_MINS",
+        "status": "UPCOMING",
+        "createdAt": "2025-04-02T09:15:30.000Z",
+        "updatedAt": "2025-04-02T09:15:30.000Z"
+      },
+      {
+        "id": "90c3d4e5-f6a7-5b6c-0d1e-rf3a4b5c6d7e",
+        "patientId": "87654321-dcba-1234-hgfe-12345678dcba",
+        "clinicianId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "scheduledFor": "2025-04-16T15:00:00.000Z",
+        "appointmentType": "THERAPY_SIXTY_MINS",
+        "status": "UPCOMING",
+        "createdAt": "2025-04-02T09:15:30.000Z",
+        "updatedAt": "2025-04-02T09:15:30.000Z"
+      }
+    ],
+    "availableSlots": [
+      {
+        "id": "c3d4e5f6-7a8b-6c7d-1e2f-3a4b5c6d7e8f",
+        "clinicianId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "date": "2025-04-20T11:00:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-01T00:00:00.000Z",
+        "updatedAt": "2025-04-01T00:00:00.000Z"
+      },
+      {
+        "id": "d4e5f6a7-8b9c-7d8e-2f3a-4b5c6d7e8f9a",
+        "clinicianId": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
+        "date": "2025-04-20T14:00:00.000Z",
+        "length": 90,
+        "createdAt": "2025-04-01T00:00:00.000Z",
+        "updatedAt": "2025-04-01T00:00:00.000Z"
+      }
+    ],
+    "maxDailyAppointments": 6,
+    "maxWeeklyAppointments": 25,
+    "createdAt": "2024-06-15T00:00:00.000Z",
+    "updatedAt": "2025-03-10T00:00:00.000Z"
+  },
+  {
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "firstName": "Michael",
+    "lastName": "Chen",
+    "states": ["NY", "NJ", "CT"],
+    "insurances": ["BCBS", "CIGNA", "PRIVATE"],
+    "clinicianType": "PSYCOLOGIST",
+    "appointments": [
+      {
+        "id": "e5f6a7b8-9c0d-8e9f-3a4b-5c6d7e8f9a0b",
+        "patientId": "23456789-bcde-5432-fghi-98765432bcde",
+        "clinicianId": "550e8400-e29b-41d4-a716-446655440000",
+        "scheduledFor": "2025-04-19T09:00:00.000Z",
+        "appointmentType": "ASSESSMENT_SESSION_1",
+        "status": "UPCOMING",
+        "createdAt": "2025-04-03T11:45:20.000Z",
+        "updatedAt": "2025-04-03T11:45:20.000Z"
+      }
+    ],
+    "availableSlots": [
+      {
+        "id": "f6a7b8c9-0d1e-9f0a-4b5c-6d7e8f9a0b1c",
+        "clinicianId": "550e8400-e29b-41d4-a716-446655440000",
+        "date": "2025-04-19T10:00:00.000Z",
+        "length": 90,
+        "createdAt": "2025-04-02T00:00:00.000Z",
+        "updatedAt": "2025-04-02T00:00:00.000Z"
+      },
+      {
+        "id": "a7b8c9d0-1e2f-0a1b-5c6d-7e8f9a0b1c2d",
+        "clinicianId": "550e8400-e29b-41d4-a716-446655440000",
+        "date": "2025-04-19T13:30:00.000Z",
+        "length": 90,
+        "createdAt": "2025-04-02T00:00:00.000Z",
+        "updatedAt": "2025-04-02T00:00:00.000Z"
+      },
+      {
+        "id": "b8c9d0e1-2f3a-1b2c-6d7e-8f9a0b1c2d3e",
+        "clinicianId": "550e8400-e29b-41d4-a716-446655440000",
+        "date": "2025-04-20T09:00:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-02T00:00:00.000Z",
+        "updatedAt": "2025-04-02T00:00:00.000Z"
+      }
+    ],
+    "maxDailyAppointments": 5,
+    "maxWeeklyAppointments": 20,
+    "createdAt": "2024-08-22T00:00:00.000Z",
+    "updatedAt": "2025-02-15T00:00:00.000Z"
+  },
+  {
+    "id": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+    "firstName": "Emily",
+    "lastName": "Rodriguez",
+    "states": ["TX", "AZ", "NM"],
+    "insurances": ["AETNA", "PRIVATE"],
+    "clinicianType": "THERAPIST",
+    "appointments": [],
+    "availableSlots": [
+      {
+        "id": "c9d0e1f2-3a4b-2c3d-7e8f-9a0b1c2d3e4f",
+        "clinicianId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+        "date": "2025-04-18T13:00:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-01T00:00:00.000Z",
+        "updatedAt": "2025-04-01T00:00:00.000Z"
+      },
+      {
+        "id": "d0e1f2a3-4b5c-3d4e-8f9a-0b1c2d3e4f5a",
+        "clinicianId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+        "date": "2025-04-18T15:00:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-01T00:00:00.000Z",
+        "updatedAt": "2025-04-01T00:00:00.000Z"
+      },
+      {
+        "id": "e1f2a3b4-5c6d-4e5f-9a0b-1c2d3e4f5a6b",
+        "clinicianId": "6ba7b810-9dad-11d1-80b4-00c04fd430c8",
+        "date": "2025-04-19T14:00:00.000Z",
+        "length": 90,
+        "createdAt": "2025-04-01T00:00:00.000Z",
+        "updatedAt": "2025-04-01T00:00:00.000Z"
+      }
+    ],
+    "maxDailyAppointments": 4,
+    "maxWeeklyAppointments": 18,
+    "createdAt": "2025-01-10T00:00:00.000Z",
+    "updatedAt": "2025-03-22T00:00:00.000Z"
+  },
+  {
+    "id": "7dc53df5-703e-49b3-8670-b1c468f47f1f",
+    "firstName": "Robert",
+    "lastName": "Williams",
+    "states": ["FL", "GA", "SC"],
+    "insurances": ["AETNA", "BCBS", "CIGNA", "PRIVATE"],
+    "clinicianType": "PSYCOLOGIST",
+    "appointments": [
+      {
+        "id": "f2a3b4c5-6d7e-5f6a-0b1c-2d3e4f5a6b7c",
+        "patientId": "34567890-cdef-6543-ghij-09876543cdef",
+        "clinicianId": "7dc53df5-703e-49b3-8670-b1c468f47f1f",
+        "scheduledFor": "2025-04-20T11:30:00.000Z",
+        "appointmentType": "ASSESSMENT_SESSION_2",
+        "status": "UPCOMING",
+        "createdAt": "2025-04-05T16:30:45.000Z",
+        "updatedAt": "2025-04-05T16:30:45.000Z"
+      },
+      {
+        "id": "a3b4c5d6-7e8f-6a7b-1c2d-3e4f5a6b7c8d",
+        "patientId": "45678901-defg-7654-hijk-10987654defg",
+        "clinicianId": "7dc53df5-703e-49b3-8670-b1c468f47f1f",
+        "scheduledFor": "2025-04-17T14:00:00.000Z",
+        "appointmentType": "THERAPY_SIXTY_MINS",
+        "status": "OCCURRED",
+        "createdAt": "2025-04-01T10:20:15.000Z",
+        "updatedAt": "2025-04-17T15:10:22.000Z"
+      },
+      {
+        "id": "b4c5d6e7-8f9a-7b8c-2d3e-4f5a6b7c8d9e",
+        "patientId": "56789012-efgh-8765-ijkl-21098765efgh",
+        "clinicianId": "7dc53df5-703e-49b3-8670-b1c468f47f1f",
+        "scheduledFor": "2025-04-16T09:30:00.000Z",
+        "appointmentType": "THERAPY_INTAKE",
+        "status": "NO_SHOW",
+        "createdAt": "2025-04-02T13:45:30.000Z",
+        "updatedAt": "2025-04-16T10:05:10.000Z"
+      }
+    ],
+    "availableSlots": [
+      {
+        "id": "c5d6e7f8-9a0b-8c9d-3e4f-5a6b7c8d9e0f",
+        "clinicianId": "7dc53df5-703e-49b3-8670-b1c468f47f1f",
+        "date": "2025-04-21T10:00:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-03T00:00:00.000Z",
+        "updatedAt": "2025-04-03T00:00:00.000Z"
+      },
+      {
+        "id": "d6e7f8a9-0b1c-9d0e-4f5a-6b7c8d9e0f1a",
+        "clinicianId": "7dc53df5-703e-49b3-8670-b1c468f47f1f",
+        "date": "2025-04-21T14:30:00.000Z",
+        "length": 90,
+        "createdAt": "2025-04-03T00:00:00.000Z",
+        "updatedAt": "2025-04-03T00:00:00.000Z"
+      }
+    ],
+    "maxDailyAppointments": 6,
+    "maxWeeklyAppointments": 28,
+    "createdAt": "2024-05-05T00:00:00.000Z",
+    "updatedAt": "2025-03-01T00:00:00.000Z"
+  },
+  {
+    "id": "1a0e5f78-3c2b-492e-8d10-4ce839f5ef98",
+    "firstName": "Jennifer",
+    "lastName": "Kim",
+    "states": ["IL", "MI", "OH", "WI"],
+    "insurances": ["BCBS", "CIGNA"],
+    "clinicianType": "THERAPIST",
+    "appointments": [
+      {
+        "id": "e7f8a9b0-1c2d-0e1f-5a6b-7c8d9e0f1a2b",
+        "patientId": "67890123-fghi-9876-jklm-32109876fghi",
+        "clinicianId": "1a0e5f78-3c2b-492e-8d10-4ce839f5ef98",
+        "scheduledFor": "2025-04-18T16:00:00.000Z",
+        "appointmentType": "THERAPY_SIXTY_MINS",
+        "status": "UPCOMING",
+        "createdAt": "2025-04-10T08:15:40.000Z",
+        "updatedAt": "2025-04-10T08:15:40.000Z"
+      },
+      {
+        "id": "f8a9b0c1-2d3e-1f2a-6b7c-8d9e0f1a2b3c",
+        "patientId": "78901234-ghij-0987-klmn-43210987ghij",
+        "clinicianId": "1a0e5f78-3c2b-492e-8d10-4ce839f5ef98",
+        "scheduledFor": "2025-04-15T13:30:00.000Z",
+        "appointmentType": "THERAPY_INTAKE",
+        "status": "OCCURRED",
+        "createdAt": "2025-04-05T11:20:35.000Z",
+        "updatedAt": "2025-04-15T14:40:25.000Z"
+      }
+    ],
+    "availableSlots": [
+      {
+        "id": "a9b0c1d2-3e4f-2a3b-7c8d-9e0f1a2b3c4d",
+        "clinicianId": "1a0e5f78-3c2b-492e-8d10-4ce839f5ef98",
+        "date": "2025-04-19T09:30:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-05T00:00:00.000Z",
+        "updatedAt": "2025-04-05T00:00:00.000Z"
+      },
+      {
+        "id": "b0c1d2e3-4f5a-3b4c-8d9e-0f1a2b3c4d5e",
+        "clinicianId": "1a0e5f78-3c2b-492e-8d10-4ce839f5ef98",
+        "date": "2025-04-19T11:30:00.000Z",
+        "length": 60,
+        "createdAt": "2025-04-05T00:00:00.000Z",
+        "updatedAt": "2025-04-05T00:00:00.000Z"
+      },
+      {
+        "id": "c1d2e3f4-5a6b-4c5d-9e0f-1a2b3c4d5e6f",
+        "clinicianId": "1a0e5f78-3c2b-492e-8d10-4ce839f5ef98",
+        "date": "2025-04-22T15:00:00.000Z",
+        "length": 90,
+        "createdAt": "2025-04-05T00:00:00.000Z",
+        "updatedAt": "2025-04-05T00:00:00.000Z"
+      }
+    ],
+    "maxDailyAppointments": 5,
+    "maxWeeklyAppointments": 22,
+    "createdAt": "2024-11-12T00:00:00.000Z",
+    "updatedAt": "2025-04-01T00:00:00.000Z"
+  }
+]
