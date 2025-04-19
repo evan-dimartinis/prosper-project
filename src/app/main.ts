@@ -5,7 +5,29 @@ import {
   format,
   startOfWeek,
   differenceInDays,
+  parseISO,
 } from "date-fns";
+import { readFileSync } from "fs";
+import {
+  createAvailableSlot,
+  createClinician,
+  createPatient,
+} from "./testUtils.ts";
+
+const testSlots = JSON.parse(
+  readFileSync(
+    "/Users/evandimartinis/my-projects/prosper-project/src/data/slots.json",
+    "utf-8"
+  )
+) as {
+  length: number;
+  date: string;
+}[];
+const testSlotsParsed: App.AvailableSlot[] = testSlots.map((s) => {
+  const d = parseISO(s.date);
+  d.setFullYear(2026);
+  return createAvailableSlot({ length: s.length, date: d });
+});
 
 /**
  * lists available slots for the patient to book. This doesn't return tuples.
@@ -33,11 +55,11 @@ export const listAvailableAssessmentsForPatient = (
     const weekCountMap = new Map<string, number>(); // string key is start of week in yyyy-mm-dd format
 
     clinician.appointments.forEach((appt) => {
-      const dayKey = format(appt.scheduledFor, "yyyy-mm-dd");
+      const dayKey = format(appt.scheduledFor, "yyyy-MM-dd");
       const dayVal = dayCountMap.get(dayKey);
       dayCountMap.set(dayKey, (dayVal ?? 0) + 1);
 
-      const weekKey = format(startOfWeek(appt.scheduledFor), "yyyy-mm-dd");
+      const weekKey = format(startOfWeek(appt.scheduledFor), "yyyy-MM-dd");
       const weekVal = weekCountMap.get(weekKey);
       weekCountMap.set(weekKey, (weekVal ?? 0) + 1);
     });
@@ -50,9 +72,9 @@ export const listAvailableAssessmentsForPatient = (
       }
 
       const numAppointmentsSameDay =
-        dayCountMap.get(format(s.date, "yyyy-mm-dd")) ?? 0;
+        dayCountMap.get(format(s.date, "yyyy-MM-dd")) ?? 0;
       const numAppointmentsSameWeek =
-        weekCountMap.get(format(startOfWeek(s.date), "yyyy-mm-dd")) ?? 0;
+        weekCountMap.get(format(startOfWeek(s.date), "yyyy-MM-dd")) ?? 0;
 
       return (
         numAppointmentsSameDay < clinician.maxDailyAppointments &&
@@ -110,3 +132,20 @@ const filterOutOverlappingSlots = (
 
   return finalSlots;
 };
+
+const patientSlots = listAvailableAssessmentsForPatient(createPatient(), [
+  createClinician({
+    availableSlots: testSlotsParsed,
+  }),
+  createClinician({
+    id: "test-clinician-2",
+    availableSlots: testSlotsParsed,
+  }),
+]);
+
+console.log(
+  patientSlots.slice(-10).map((s) => [
+    { ...s[0], date: format(s[0].date, "yyyy-MM-dd HH:mm") },
+    { ...s[1], date: format(s[1].date, "yyyy-MM-dd HH:mm") },
+  ])
+);

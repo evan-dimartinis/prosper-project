@@ -68,7 +68,7 @@ export const createAppointment = (appointment?: Partial<App.Appointment>) => ({
   ...appointment,
 });
 
-const createAvailableSlot = (
+export const createAvailableSlot = (
   slot?: Partial<App.AvailableSlot>
 ): App.AvailableSlot => ({
   ...testAvailableSlot,

@@ -8,7 +8,9 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "./dist",
     "rootDir": "./src",
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "typeRoots": ["./node_modules/@types", "./types"],
   "include": ["src/**/*", "src/types"],
