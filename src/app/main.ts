@@ -30,10 +30,10 @@ const testSlotsParsed: App.AvailableSlot[] = testSlots.map((s) => {
 });
 
 /**
- * lists available slots for the patient to book. This doesn't return tuples.
- * Once the first appointment is selected, the frontend should be filtering out the appointments that are on the same day (Or over 7 days later)
- * @param patient Patient
- * @returns List of available slots for that patient to book
+ * List all clinician AvailableSlots that are valid for the patient
+ * @param patient Patient object
+ * @param clinicians list of clinicians with available slots
+ * @returns list of tuples consisting of 2 AvailableSlot objects - initial assessment and follow-up assessment slots
  */
 export const listAvailableAssessmentsForPatient = (
   patient: App.Patient,
